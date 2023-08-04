@@ -2,13 +2,15 @@
 
 ## 题目
 
+
+
 **时间限制：1000ms**
 
 **内存限制：256MB**
 
 $Rin$ 是一首[音乐MV](https://music.163.com/#/mv?id=5372069)的主角，在 $Rin$ 很小的时候，地球即将被彗星撞击，她的父亲为了拯救 $Rin$，启动了一个名为 ***project-505*** 的项目，提前将她送出了地球，并为她建立了一个虚拟世界 ， $Rin$ 可以在这个世界中创造一切。
 
-$Rin$ 可以在其中生成多种多样的物品，但是虚拟世界的存储大小是有限的，为了节省存储大小，设定虚拟世界所配置的单个物品的最大占用大小为 $n$ （物品占用大小可以和 $n$ 相等），每个物品有一个编号值 $x$，每个物品所占用的大小为 $size=\left\lceil \sum \limits_{i=1}^{x}\frac{i^2}{x+1} \right\rceil$ ，即 $size=\left\lceil \frac{1^2}{x+1}+\frac{2^2}{x+1}+\dots +\frac{x^2}{x+1} \right\rceil$ 。
+$Rin$ 可以在其中生成多种多样的物品，但是虚拟世界的存储大小是有限的，为了节省存储大小，设定虚拟世界所配置的单个物品的最大占用大小为 $n$ （物品占用大小可以和 $n$ 相等），每个物品有一个编号值 $x$，每个物品所占用的大小为 $size=\left\lceil \sum \limits_{i=1}^{x}\dfrac{i^2}{x+1} \right\rceil$ ，即 $size=\left\lceil \dfrac{1^2}{x+1}+\dfrac{2^2}{x+1}+\dots +\dfrac{x^2}{x+1} \right\rceil$ 。
 
 其中 $\left\lceil x \right\rceil$ 代表向上取整，例如 $\left\lceil 1.2 \right\rceil=2$ ，$\left\lceil 2.0 \right\rceil=2$ ，$\left\lceil 2.7 \right\rceil=3$ 。
 
@@ -40,68 +42,7 @@ YES
 
 样例中 $n=4$，编号值为 $3$ ；
 
-当物品编号值为 $3$ 时，这个物品所占用大小为 $size=\left\lceil \frac{1^2}{3+1}+\frac{2^2}{3+1} +\frac{3^2}{3+1} \right\rceil =\left\lceil \frac{14}{4} \right\rceil=4$，不超过 $4$ ，所以可以生成 ；
-
-# 数据
-
-## 输入1
-
-```
-1 1000000000
-```
-
-## 输出1
-
-```
-NO
-```
-
-## 输入2
-```
-1000000000 100000
-```
-## 输出2
-```
-NO
-```
-
-## 输入3
-
-```
-1000000000 52345
-```
-
-## 输出3
-
-```
-YES
-```
-
-## 输入4
-
-```
-2 2
-```
-
-## 输出4
-
-```
-YES
-```
-
-## 输入5
-
-```
-1 1
-```
-
-## 输出5
-
-```
-YES
-```
-
-
+当物品编号值为 $3$ 时，这个物品所占用大小为 $size=\left\lceil \dfrac{1^2}{3+1}+\dfrac{2^2}{3+1} +\dfrac{3^2}{3+1} \right\rceil =\left\lceil \dfrac{14}{4} \right\rceil=4$，不超过 $4$ ，所以可以生成 ；
 
 # 题解
 
@@ -109,9 +50,9 @@ YES
 
 设 $a_n=n^2$ 
 
-则 $S_n=1^2+2^2+\dots+n^2=\frac{1}{6}n(n+1)(2n+1)$
+则 $S_n=1^2+2^2+\dots+n^2=\dfrac{1}{6}n(n+1)(2n+1)$
 
-因此 $size=\frac{S_n}{n+1}=\frac{1}{6}n(2n+1)$；
+因此 $size=\dfrac{S_n}{n+1}=\dfrac{1}{6}n(2n+1)$；
 
 由于 $\left\lceil size \right\rceil \ge size$
 
